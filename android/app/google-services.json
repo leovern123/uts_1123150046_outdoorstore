@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "770779239667",
+    "project_id": "outdoorstore-38497",
+    "storage_bucket": "outdoorstore-38497.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:770779239667:android:e37232ad92416e8c7f5386",
+        "android_client_info": {
+          "package_name": "com.example.outdoor_store"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkWUVEJj_tQFk9EiwUqvWAKDCkeGllm-Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
