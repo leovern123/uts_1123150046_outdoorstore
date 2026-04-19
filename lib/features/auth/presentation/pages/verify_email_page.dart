@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 import '/core/routes/app_router.dart';
 import '../widgets/auth_header.dart';
 import '../widgets/custom_button.dart';
-import '../providers/auth_provider.dart';
+import '../providers/auth_state_provider.dart';
 
 class VerifyEmailPage extends StatefulWidget {
   const VerifyEmailPage({super.key});
@@ -33,7 +33,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
     // Polling: cek setiap 5 detik apakah email sudah diverifikasi
   void _startPolling() {
     _timer = Timer.periodic(const Duration(seconds: 5), (_) async {
-      final auth = context.read<AuthProvider>();
+      final auth = context.read<AuthStateProvider>();
       final success = await auth.checkEmailVerified();
 
       if (success && mounted) {
@@ -46,7 +46,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
   Future<void> _resendEmail() async {
     if (_resendCooldown) return;
 
-    await context.read<AuthProvider>().resendVerificationEmail();
+    await context.read<AuthStateProvider>().resendVerificationEmail();
 
     setState(() {
       _resendCooldown = true;
@@ -69,7 +69,8 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
 
   @override
   Widget build(BuildContext context) {
-    final user = context.watch<AuthProvider>().firebaseUser;
+    final user = context.watch<AuthStateProvider>().firebaseUser;
+    
 
     return Scaffold(
       body: SafeArea(
@@ -103,7 +104,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
               CustomButton(
                 label: 'Logout',
                 onPressed: () {
-                  context.read<AuthProvider>().logout();
+                  context.read<AuthStateProvider>().logout();
                   Navigator.pushReplacementNamed(context, AppRouter.login);
                 },
               ),

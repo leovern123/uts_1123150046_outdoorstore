@@ -18,7 +18,7 @@ enum AuthStatus {
   error,
 }
 
-class AuthProvider extends ChangeNotifier {
+class AuthStateProvider extends ChangeNotifier {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final GoogleSignIn _googleSignIn = GoogleSignIn();
 

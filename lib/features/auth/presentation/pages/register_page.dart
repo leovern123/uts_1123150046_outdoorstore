@@ -7,7 +7,7 @@ import '../widgets/loading_overlay.dart';
 import '../widgets/custom_text_field.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/auth_header.dart';
-import '../providers/auth_provider.dart';
+import '../providers/auth_state_provider.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -37,7 +37,7 @@ class _RegisterPageState extends State<RegisterPage> {
   Future<void> _register() async {
     if (!_formKey.currentState!.validate()) return;
 
-    final auth = context.read<AuthProvider>();
+    final auth = context.read<AuthStateProvider>();
 
     final success = await auth.register(
       name: _nameCtrl.text.trim(),
@@ -63,7 +63,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
   @override
   Widget build(BuildContext context) {
-    final isLoading = context.watch<AuthProvider>().isLoading;
+    final isLoading = context.watch<AuthStateProvider>().isLoading;
 
     return LoadingOverlay(
       isLoading: isLoading,

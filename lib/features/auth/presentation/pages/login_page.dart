@@ -10,7 +10,7 @@ import '../widgets/custom_button.dart';
 import '../widgets/auth_header.dart';
 import '../widgets/google_sign_in_button.dart';
 import '../widgets/divider_with_text.dart';
-import '../providers/auth_provider.dart';
+import '../providers/auth_state_provider.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -36,7 +36,7 @@ class _LoginPageState extends State<LoginPage> {
   Future<void> _loginEmail() async {
     if (!_formKey.currentState!.validate()) return;
 
-   final auth = context.read<AuthProvider>();
+   final auth = context.read<AuthStateProvider>();
 
     final ok = await auth.loginWithEmail(
       email: _emailCtrl.text.trim(),
@@ -47,12 +47,12 @@ class _LoginPageState extends State<LoginPage> {
   }
   // Handler untuk login Google
   Future<void> _loginGoogle() async {
-   final auth = context.read<AuthProvider>();
+   final auth = context.read<AuthStateProvider>();
     final ok = await auth.loginWithGoogle();
     _handleLoginResult(ok, auth);
   }
  // Routing berdasarkan hasil login
-  void _handleLoginResult(bool ok, AuthProvider auth) {
+  void _handleLoginResult(bool ok, AuthStateProvider auth) {
     if (!mounted) return;
 
     if (ok) {
@@ -105,7 +105,7 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    final isLoading = context.watch<AuthProvider>().isLoading;
+    final isLoading = context.watch<AuthStateProvider>().isLoading;
 
     return LoadingOverlay(
       isLoading: isLoading,
