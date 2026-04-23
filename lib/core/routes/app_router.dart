@@ -7,7 +7,7 @@ import '../../features/auth/presentation/providers/auth_state_provider.dart';
 import 'package:provider/provider.dart';
 import '../services/secure_storage.dart';
 import '../guards/auth_guard.dart';
-import '../../features/splash/presentation/pages/splash_page.dart';
+import '../pages/splash_page.dart';
 
 class AppRouter {
   static const String splash      = '/';

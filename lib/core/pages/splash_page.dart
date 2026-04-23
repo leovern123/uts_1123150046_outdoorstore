@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../../core/routes/app_router.dart';
-import '../../../../core/services/secure_storage.dart';
+import '../routes/app_router.dart';
+import '../services/secure_storage.dart';
 
 // SplashPage: cek token tersimpan, redirect otomatis
 class SplashPage extends StatefulWidget {
