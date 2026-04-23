@@ -1,17 +1,17 @@
 class ApiConstants {
-  static const String baseUrl = 'http://192.168.0.28:8080/v1';
+  static const String baseUrl =  'http://10.95.239.21:8081';
 
   // ================= AUTH =================
-  static const String verifyToken = '/auth/verify-token';
+  static const String verifyToken = "/v1/auth/verify-token";
 
   // ================= PRODUCT =================
-  static const String products = '/products';
+  static const String products = '/v1/products';
 
   // ================= CART =================
-  static const String cart = '/cart';
+  static const String cart = '/v1/cart';
 
   // ================= ORDER =================
-  static const String orders = '/orders';
+  static const String orders = '/v1/orders';
 
   // ================= TIMEOUT =================
   static const int connectTimeout = 15000;

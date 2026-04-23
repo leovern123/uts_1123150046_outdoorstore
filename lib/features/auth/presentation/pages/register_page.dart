@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:email_validator/email_validator.dart';
 
 import '../../../../core/routes/app_router.dart';
-import '../widgets/loading_overlay.dart';
+import '..//widgets/loading_overlay.dart';
 import '../widgets/custom_text_field.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/auth_header.dart';

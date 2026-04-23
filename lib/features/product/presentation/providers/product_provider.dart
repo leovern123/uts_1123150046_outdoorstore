@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:dio/dio.dart';
-
-import '../../../../core/constants/api_constants.dart';
-import '../../../../core/services/dio_client.dart';
+import '../../domain/repositories/product_repository.dart';
 import '../../data/models/product_model.dart';
+import '../../domain/repositories/product_repository_impl.dart';
 
 enum ProductStatus { initial, loading, loaded, error }
 
 class ProductProvider extends ChangeNotifier {
+  final ProductRepository _repository = ProductRepositoryImpl();
+
   ProductStatus _status = ProductStatus.initial;
   List<ProductModel> _products = [];
   String? _error;
@@ -21,18 +21,10 @@ class ProductProvider extends ChangeNotifier {
     notifyListeners();
 
     try {
-      final response =
-          await DioClient.instance.get(ApiConstants.products);
-
-      final List<dynamic> data = response.data['data'];
-
-      _products =
-          data.map((e) => ProductModel.fromJson(e)).toList();
-
+      _products = await _repository.getProducts();
       _status = ProductStatus.loaded;
-    } on DioException catch (e) {
-      _error = e.response?.data['message'] ??
-          'Gagal memuat produk outdoor';
+    } catch (e) {
+      _error = e.toString();
       _status = ProductStatus.error;
     }
 
