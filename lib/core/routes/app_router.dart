@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import '../../features/auth/presentation/pages/login_page.dart';
 import '../../features/auth/presentation/pages/register_page.dart';
 import '../../features/auth/presentation/pages/verify_email_page.dart';
-import '../../features/product/presentation/pages/dashboard_page.dart';
+import '../../features/dashboard/presentation/pages/dashboard_page.dart';
 import '../../features/auth/presentation/providers/auth_state_provider.dart';
 import 'package:provider/provider.dart';
 import '../services/secure_storage.dart';
 import '../guards/auth_guard.dart';
-import '../pages/splash_page.dart';
+import '../../features/splash/presentation/pages/splash_page.dart';
 
 class AppRouter {
   static const String splash      = '/';

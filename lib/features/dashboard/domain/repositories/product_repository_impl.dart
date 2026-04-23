@@ -1,7 +1,7 @@
 import '../../../../core/constants/api_constants.dart';
 import '../../../../core/services/dio_client.dart';
-import '../../domain/repositories/product_repository.dart';
-import '../../data/models/product_model.dart';
+import 'product_repository.dart';
+import '../../../product/data/models/product_model.dart';
 
 class ProductRepositoryImpl implements ProductRepository {
   @override

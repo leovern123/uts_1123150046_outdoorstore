@@ -3,8 +3,8 @@ import 'package:provider/provider.dart';
 
 import '../../../../core/routes/app_router.dart';
 import '../../../auth/presentation/providers/auth_state_provider.dart';
-import '../providers/product_provider.dart';
-import '../../data/models/product_model.dart';
+import '../../../product/presentation/providers/product_provider.dart';
+import '../../../product/data/models/product_model.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
