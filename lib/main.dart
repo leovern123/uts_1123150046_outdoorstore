@@ -8,7 +8,7 @@ import 'core/guards/auth_guard.dart';
 import 'core/theme/app_theme.dart';
 import 'features/auth/presentation/providers/auth_state_provider.dart';
 import 'features/product/presentation/providers/product_provider.dart';
-
+import 'features/cart/presentation/providers/cart_provider.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized(); 
 
@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
+         ChangeNotifierProvider(create: (_) => CartProvider()),
         ChangeNotifierProvider(create: (_) => AuthStateProvider()),
         ChangeNotifierProvider(create: (_) => ProductProvider()),
       ],
