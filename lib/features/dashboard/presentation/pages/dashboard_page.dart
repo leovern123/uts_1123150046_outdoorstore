@@ -161,8 +161,8 @@ class _DashboardPageState extends State<DashboardPage> {
                     ),
                     child: const Center(
                       child: Text(
-                        'Diskon Perlengkapan Hiking 🔥',
-                        style: TextStyle(color: Colors.white, fontSize: 18),
+                        'Diskon Perlengkapan Hiking ',
+                        style: TextStyle(color: Colors.white, fontSize: 20),
                       ),
                     ),
                   ),
