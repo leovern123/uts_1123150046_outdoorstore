@@ -5,6 +5,7 @@ import '../../../../core/routes/app_router.dart';
 import '../../../auth/presentation/providers/auth_state_provider.dart';
 import '../../../product/presentation/providers/product_provider.dart';
 import '../../../product/data/models/product_model.dart';
+import '../../../cart/presentation/providers/cart_provider.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
@@ -238,9 +239,33 @@ class _DashboardPageState extends State<DashboardPage> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(p.name,
+                                  Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Expanded(
+                                      child:  Text
+                                      (p.name,
                                       maxLines: 2,
                                       overflow: TextOverflow.ellipsis),
+                                    ),
+                                  
+                                      IconButton(
+                                      icon: const Icon(Icons.add_shopping_cart),
+                                      onPressed: () {
+                                        context.read<CartProvider>().addToCart(p);
+
+                                        ScaffoldMessenger.of(context).showSnackBar(
+                                          SnackBar(
+                                            content: Text(
+                                                "${p.name} ditambahkan ke keranjang"),
+                                          ),
+                                        );
+                                      },
+                                    ),
+                                  ],
+                                ),
+
 
                                   const SizedBox(height: 4),
 
