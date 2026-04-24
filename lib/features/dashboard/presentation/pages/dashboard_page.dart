@@ -289,6 +289,7 @@ class _DashboardPageState extends State<DashboardPage> {
                         ),
                       );
                     },
+
                     childCount:
                         _filteredProducts(product.products).length,
                   ),
