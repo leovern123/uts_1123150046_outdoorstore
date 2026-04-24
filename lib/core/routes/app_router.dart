@@ -8,6 +8,7 @@ import 'package:provider/provider.dart';
 import '../services/secure_storage.dart';
 import '../guards/auth_guard.dart';
 import '../pages/splash_page.dart';
+import '../../features/cart/presentation/pages/cart_page.dart';
 
 class AppRouter {
   static const String splash      = '/';
@@ -15,6 +16,8 @@ class AppRouter {
   static const String register    = '/register';
   static const String verifyEmail = '/verify-email';
   static const String dashboard   = '/dashboard';
+  static const String cart = '/cart';
+  
 
   static Map<String, WidgetBuilder> get routes => {
     splash:      (_) => const SplashPage(),
@@ -22,5 +25,6 @@ class AppRouter {
     register:    (_) => const RegisterPage(),
     verifyEmail: (_) => const VerifyEmailPage(),
     dashboard:   (_) => const AuthGuard(child: DashboardPage()),
+    cart: (_) => const CartPage(),
   };
 }
