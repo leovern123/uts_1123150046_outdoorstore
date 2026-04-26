@@ -1,16 +1,172 @@
-# outdoor_store
+# 🏕️ Outdoor Store App
 
-A new Flutter project.
+Aplikasi mobile berbasis **Flutter** yang terintegrasi dengan **Backend Golang** untuk sistem e-commerce sederhana seperti autentikasi, cart, dan order.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 👤 Identitas Mahasiswa
 
-A few resources to get you started if this is your first Flutter project:
+* **Nama** : *UMAR BAKRI*
+* **NIM**  : *1123150046*
+* **Link Demo YouTube** : *(MENYUSUL..)*
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 📱 Deskripsi Aplikasi
+
+Outdoor Store App adalah aplikasi mobile yang memungkinkan pengguna untuk:
+
+* Login menggunakan Firebase Authentication
+* Melihat daftar produk outdoor
+* Menambahkan produk ke keranjang (cart)
+* Melakukan checkout dan membuat pesanan
+* Mengelola data order
+
+---
+
+## 🧱 Struktur Project
+
+```
+outdoorstore/
+├── lib/                  # Source code Flutter
+├── android/
+├── ios/
+├── pubspec.yaml
+├── backend/              # Backend Golang
+│   ├── main.go
+│   ├── go.mod
+│   ├── handlers/
+│   ├── services/
+│   ├── repositories/
+│   └── .env
+```
+
+---
+
+## ⚙️ Cara Menjalankan Aplikasi
+
+### 🔹 1. Clone Repository
+
+```bash
+git clone https://github.com/leovern123/backendoutdoorstore.git
+cd outdoorstore
+```
+
+---
+
+### 🔹 2. Setup Backend (Golang)
+
+Masuk ke folder backend:
+
+```bash
+cd backend
+```
+
+Install dependency:
+
+```bash
+go mod tidy
+```
+
+Buat file `.env`:
+
+```env
+PORT=8081
+
+DB_HOST=localhost
+DB_PORT=3306
+DB_USER=root
+DB_PASS=
+DB_NAME=outdoorstore
+
+JWT_SECRET=secret123
+```
+
+Jalankan backend:
+
+```bash
+go run main.go
+```
+
+Backend akan berjalan di:
+
+```
+http://localhost:8081
+```
+
+---
+
+### 🔹 3. Setup Database
+
+Pastikan MySQL sudah aktif, lalu buat database:
+
+```sql
+CREATE DATABASE outdoorstore;
+```
+
+Import atau jalankan migration sesuai kebutuhan project.
+
+---
+
+### 🔹 4. Jalankan Flutter
+
+Kembali ke root project:
+
+```bash
+flutter pub get
+flutter run
+```
+
+---
+
+### 🔹 5. Konfigurasi API di Flutter
+
+Edit base URL di Flutter:
+
+```dart
+const baseUrl = "http://10.198.178.21:8081";
+```
+
+> ⚠️ Gunakan IP lokal (bukan localhost) jika dijalankan di HP
+
+---
+
+## 🔐 Fitur Utama
+
+* ✅ Firebase Authentication (Login/Register)
+* ✅ Verifikasi token ke backend Golang
+* ✅ CRUD Produk
+* ✅ Cart (Keranjang Belanja)
+* ✅ Checkout & Order
+* ✅ Manajemen Order
+
+---
+
+## 🛠️ Teknologi yang Digunakan
+
+| Teknologi     | Keterangan      |
+| ------------- | --------------- |
+| Flutter       | Frontend Mobile |
+| Golang        | Backend API     |
+| MySQL         | Database        |
+| Firebase Auth | Autentikasi     |
+
+---
+
+## ⚠️ Catatan Penting
+
+* Pastikan backend sudah berjalan sebelum membuka aplikasi Flutter
+* Gunakan IP lokal jika menggunakan perangkat fisik
+* File `.env` tidak diupload ke GitHub (gunakan `.env.example`)
+
+---
+
+## 🚀 Penutup
+
+Project ini dibuat sebagai bagian dari ujian UTS mata kuliah mobile lanjutan untuk memahami integrasi antara:
+
+* Mobile App (Flutter)
+* Backend API (Golang)
+* Authentication (Firebase)
+
+---
