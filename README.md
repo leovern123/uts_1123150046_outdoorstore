@@ -48,8 +48,8 @@ outdoorstore/
 ### 🔹 1. Clone Repository
 
 ```bash
-git clone https://github.com/leovern123/backendoutdoorstore.git
-cd outdoorstore
+git clone https://github.com/leovern123/uts_1123150046_outdoorstore
+cd uts_1123150046_outdoorstore
 ```
 
 ---
