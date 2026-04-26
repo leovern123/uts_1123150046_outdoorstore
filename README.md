@@ -152,15 +152,6 @@ const baseUrl = "http://10.198.178.21:8081";
 | Firebase Auth | Autentikasi     |
 
 ---
-
-## ⚠️ Catatan Penting
-
-* Pastikan backend sudah berjalan sebelum membuka aplikasi Flutter
-* Gunakan IP lokal jika menggunakan perangkat fisik
-* File `.env` tidak diupload ke GitHub (gunakan `.env.example`)
-
----
-
 ## 🚀 Penutup
 
 Project ini dibuat sebagai bagian dari ujian UTS mata kuliah mobile lanjutan untuk memahami integrasi antara:
