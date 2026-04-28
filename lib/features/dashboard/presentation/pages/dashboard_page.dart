@@ -148,28 +148,6 @@ class _DashboardPageState extends State<DashboardPage> {
                 ),
               ),
 
-              // BANNER
-              SliverToBoxAdapter(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child: Container(
-                    height: 120,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      gradient: const LinearGradient(
-                        colors: [Color(0xFF1565C0), Color(0xFF42A5F5)],
-                      ),
-                    ),
-                    child: const Center(
-                      child: Text(
-                        'Diskon Perlengkapan Hiking ',
-                        style: TextStyle(color: Colors.white, fontSize: 20),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-
               const SliverToBoxAdapter(child: SizedBox(height: 16)),
 
               // CATEGORY
