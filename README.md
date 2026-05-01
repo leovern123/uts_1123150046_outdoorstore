@@ -8,7 +8,7 @@ Aplikasi mobile berbasis **Flutter** yang terintegrasi dengan **Backend Golang**
 
 * **Nama** : *UMAR BAKRI*
 * **NIM**  : *1123150046*
-* **Link Demo YouTube** : *(MENYUSUL..)*
+* **Link Demo YouTube** : *https://youtu.be/Clt_oPQfySk*
 
 ---
 
